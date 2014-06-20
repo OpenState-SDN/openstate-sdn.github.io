@@ -26,25 +26,34 @@
         <h2>
 <a name="welcome-to-openstate-sdn-project" class="anchor" href="#welcome-to-openstate-sdn-project"><span class="octicon octicon-link"></span></a>Welcome to OpenState SDN project.</h2>
 
-<p>To try OpenState features you need first to run our custom version of Mininet.</p>
+<p>OpenState is a research effort focused in the development of a stateful data-plane API for Software-Defined Networking. We propose an extension to current OpenFlow abstraction that use state machines implemented inside switches to reduce the need to rely on remote controllers. To know more about our project you can read our first paper:</p>
+
+<blockquote>
+<p>G. Bianchi, M. Bonola, A. Capone, and C. Cascone, “OpenState: Programming Platform-independent Stateful OpenFlow Applications Inside the Switch” ACM SIGCOMM Computer Communication Review, vol. 44, no. 2, pp. 44–51, 2014. <a href="openstate-ccr.pdf">[PDF]</a> <a href="openstate-ccr.bib">[BibTex]</a>.</p>
+</blockquote>
+
+<h3>
+<a name="try-openstate" class="anchor" href="#try-openstate"><span class="octicon octicon-link"></span></a>Try OpenState</h3>
+
+<p>To try OpenState features you first to run our custom version of Mininet.</p>
 
 <p>The following commands have been tested in a clean <strong>Mininet v2.1.0</strong> VM. For download and help running Mininet please refer to <a href="http://mininet.org/">http://mininet.org/</a></p>
 
-<p>1) We need to update Mininet install scripts in order to download and configure OpenState switch/controller. Inside Mininet shell type the following commands:</p>
+<p>1) Update Mininet install scripts in order to download and configure OpenState switch/controller. Inside Mininet shell type the following commands:</p>
 
 <pre><code>cd mininet
 git remote add openstate https://github.com/OpenState-SDN/mininet.git
 git pull openstate master
 </code></pre>
 
-<p>2) We can now install OpenState switch/controller with the following options:</p>
+<p>2) Install OpenState switch/controller with the following options:</p>
 
 <pre><code>sudo ./util/install.sh -n3fy
 </code></pre>
 
 <p>The command above will run Mininet installer including OpenState softswitch and controller in only one shot!</p>
 
-<p>3) All set here. Now you can check out some <a href="https://github.com/OpenState-SDN/ryu/wiki">OpenState sample applications</a></p>
+<p>3) Check out some <a href="https://github.com/OpenState-SDN/ryu/wiki">OpenState sample applications</a></p>
 
 <h3>
 <a name="repositories" class="anchor" href="#repositories"><span class="octicon octicon-link"></span></a>Repositories</h3>
