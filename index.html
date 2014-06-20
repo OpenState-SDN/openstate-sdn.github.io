@@ -23,20 +23,36 @@
 
       </header>
       <section>
-        <h3>
-<a name="welcome-to-openstate-sdn-project" class="anchor" href="#welcome-to-openstate-sdn-project"><span class="octicon octicon-link"></span></a>Welcome to OpenState SDN project.</h3>
+        <h2>
+<a name="welcome-to-openstate-sdn-project" class="anchor" href="#welcome-to-openstate-sdn-project"><span class="octicon octicon-link"></span></a>Welcome to OpenState SDN project.</h2>
 
-<p>This page is still working in progress..</p>
+<p>To try OpenState feature you need to run our custom version of Mininet.</p>
 
-<p>In the meanwhile you can check out our repositories:</p>
+<p>The following commands have been tested in a clean <strong>Mininet v2.1.0</strong> VM. For download and help running Mininet please refer to <a href="http://mininet.org/">http://mininet.org/</a></p>
 
-<p><strong>OpenState VM based on Mininet</strong>
-<a href="http://stud.netgroup.uniroma2.it/~openstate/openstate-mininet.tar.gz">http://stud.netgroup.uniroma2.it/~openstate/openstate-mininet.tar.gz</a></p>
+<p>1) We need to update Mininet install scripts in order to download and configure OpenState switch/controller. Inside Mininet shell type the following commands:</p>
 
-<p><strong>OpenState switch</strong>
+<pre><code>cd mininet
+git remote add openstate https://github.com/OpenState-SDN/mininet.git
+git pull openstate master
+</code></pre>
+
+<p>2) We can now install OpenState switch/controller with the following options:</p>
+
+<pre><code>sudo ./util/install.sh -n3fy
+</code></pre>
+
+<p>The command above will run Mininet installer including OpenState softswitch and controller in only one shot!</p>
+
+<p>3) All set here. Now you can check out some <a href="https://github.com/OpenState-SDN/ryu/wiki">OpenState sample applications</a></p>
+
+<h3>
+<a name="repositories" class="anchor" href="#repositories"><span class="octicon octicon-link"></span></a>Repositories</h3>
+
+<p><em>OpenState switch</em>
 <a href="https://github.com/OpenState-SDN/ofsoftswitch13">https://github.com/OpenState-SDN/ofsoftswitch13</a></p>
 
-<p><strong>OpenState controller</strong>
+<p><em>OpenState controller</em>
 <a href="https://github.com/OpenState-SDN/ryu">https://github.com/OpenState-SDN/ryu</a></p>
       </section>
       <footer>
