@@ -42,10 +42,9 @@
 <p>1) Update Mininet install scripts in order to download and configure OpenState switch/controller. Inside Mininet shell type the following commands:</p>
 
 <pre><code>cd mininet
-git checkout master
-git pull origin master
 git remote add openstate https://github.com/OpenState-SDN/mininet.git
-git pull openstate master
+git fetch openstate master
+git checkout openstate/master
 </code></pre>
 
 <p>2) Install OpenState switch/controller with the following options:</p>
