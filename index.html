@@ -1,36 +1,42 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>OpenState-SDN by OpenState-SDN</title>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>OpenState-SDN by OpenState-SDN</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>OpenState-SDN</h1>
-        <p></p>
+<link rel="stylesheet" href="stylesheets/styles.css">
+<link rel="stylesheet" href="stylesheets/pygment_trac.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+<header>
+<h1>OpenState-SDN</h1>
+<p></p>
 
 
-        <p class="view"><a href="https://github.com/OpenState-SDN">View My GitHub Profile</a></p>
+<p class="view"><a href="https://github.com/OpenState-SDN">View My GitHub Profile</a></p>
 
-      </header>
-      <section>
-        <h2>
+</header>
+
+<section>
+<h2>
 <a name="welcome-to-openstate-sdn-project" class="anchor" href="#welcome-to-openstate-sdn-project"><span class="octicon octicon-link"></span></a>Welcome to OpenState SDN project.</h2>
 
 <p>OpenState is a research effort focused in the development of a stateful data-plane API for Software-Defined Networking. We propose an extension to current OpenFlow abstraction that use state machines implemented inside switches to reduce the need to rely on remote controllers. To know more about our project you can read our first paper:</p>
 
 <blockquote>
-<p>G. Bianchi, M. Bonola, A. Capone, and C. Cascone, “OpenState: Programming Platform-independent Stateful OpenFlow Applications Inside the Switch” ACM SIGCOMM Computer Communication Review, vol. 44, no. 2, pp. 44–51, 2014. <a href="openstate-ccr.pdf">[PDF]</a> <a href="openstate-ccr.bib">[BibTex]</a>.</p>
+<p>G. Bianchi, M. Bonola, A. Capone, and C. Cascone, “OpenState: Programming Platform-independent Stateful OpenFlow Applications Inside the Switch” ACM SIGCOMM Computer Communication Review, vol. 44, no. 2, pp. 44–51, 2014. <a href="pub/openstate-ccr.pdf">[PDF]</a> <a href="pub/openstate-ccr.bib">[BibTex]</a>.</p>
 </blockquote>
+
+<p>If you are looking to download the slides of the SDN tutorial that we gave at CAMAD 2014 click <a href="pub/capone-bianchi-sdn-tutorial-CAMAD.pptx">here</a>.</p>
 
 <h3>
 <a name="try-openstate" class="anchor" href="#try-openstate"><span class="octicon octicon-link"></span></a>Try OpenState</h3>
@@ -70,28 +76,82 @@ git checkout openstate/master
 (in alphabetical order)
 
 <p>
-  <a href="https://github.com/ccascone">Carmelo Cascone</a>,
-  <a href="https://github.com/DavideSanvito">Davide Sanvito</a>,
-  <a href="https://github.com/haniehrajabi">Hanieh Rajabi</a>,
-  <a href="https://github.com/lupo89">Luca Pollini</a>,
-  <a href="https://github.com/marcobonola">Marco Bonola</a>
+<a href="https://github.com/ccascone">Carmelo Cascone</a>,
+<a href="https://github.com/DavideSanvito">Davide Sanvito</a>,
+<a href="https://github.com/haniehrajabi">Hanieh Rajabi</a>,
+<a href="https://github.com/lupo89">Luca Pollini</a>,
+<a href="https://github.com/marcobonola">Marco Bonola</a>
 </p>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-51960380-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+</section>
 
-  </body>
+<footer>
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+</footer>
+
+</div>
+
+<script src="javascripts/scale.fix.js"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+try {
+	var pageTracker = _gat._getTracker("UA-51960380-1");
+	pageTracker._trackPageview();
+} catch (err) {}
+
+if (typeof jQuery != 'undefined') {
+	jQuery(document).ready(function($) {
+		var filetypes = /\.(zip|exe|dmg|pdf|doc.*|xls.*|ppt.*|mp3|txt|rar|wma|mov|avi|wmv|flv|wav)$/i;
+		var baseHref = '';
+		if (jQuery('base').attr('href') != undefined) baseHref = jQuery('base').attr('href');
+
+		jQuery('a').on('click', function(event) {
+			var el = jQuery(this);
+			var track = true;
+			var href = (typeof(el.attr('href')) != 'undefined') ? el.attr('href') : "";
+			var isThisDomain = href.match(document.domain.split('.').reverse()[1] + '.' + document.domain.split('.').reverse()[0]);
+			if (!href.match(/^javascript:/i)) {
+				var elEv = [];
+				elEv.value = 0, elEv.non_i = false;
+				if (href.match(/^mailto\:/i)) {
+					elEv.category = "email";
+					elEv.action = "click";
+					elEv.label = href.replace(/^mailto\:/i, '');
+					elEv.loc = href;
+				} else if (href.match(filetypes)) {
+					var extension = (/[.]/.exec(href)) ? /[^.]+$/.exec(href) : undefined;
+					elEv.category = "download";
+					elEv.action = "click-" + extension[0];
+					elEv.label = href.replace(/ /g, "-");
+					elEv.loc = baseHref + href;
+				} else if (href.match(/^https?\:/i) && !isThisDomain) {
+					elEv.category = "external";
+					elEv.action = "click";
+					elEv.label = href.replace(/^https?\:\/\//i, '');
+					elEv.non_i = true;
+					elEv.loc = href;
+				} else if (href.match(/^tel\:/i)) {
+					elEv.category = "telephone";
+					elEv.action = "click";
+					elEv.label = href.replace(/^tel\:/i, '');
+					elEv.loc = href;
+				} else track = false;
+
+				if (track) {
+					_gaq.push(['_trackEvent', elEv.category.toLowerCase(), elEv.action.toLowerCase(), elEv.label.toLowerCase(), elEv.value, elEv.non_i]);
+					if (el.attr('target') == undefined || el.attr('target').toLowerCase() != '_blank') {
+						setTimeout(function() {
+							location.href = elEv.loc;
+						}, 400);
+						return false;
+					}
+				}
+			}
+		});
+	});
+}
+</script>
+
+</body>
 </html>
