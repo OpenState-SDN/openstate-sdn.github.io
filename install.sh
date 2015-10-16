@@ -70,7 +70,7 @@ function ryu {
     sudo apt-get -y install autoconf automake g++ libtool python make libxml2 \
         libxslt-dev python-pip python-dev python-matplotlib
 
-    sudo pip install gevent pbr==0.11 pulp networkx fnss
+    sudo pip install gevent pbr pulp networkx fnss
     sudo pip install -I six==1.9.0
 
     # fetch RYU
