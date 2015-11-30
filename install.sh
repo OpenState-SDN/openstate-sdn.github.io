@@ -68,10 +68,12 @@ function ryu {
 
     # install Ryu dependencies"
     sudo apt-get -y install autoconf automake g++ libtool python make libxml2 \
-        libxslt-dev python-pip python-dev python-matplotlib
+        libxslt-dev python-pip python-dev
+    sudo pip install gevent
 
-    sudo pip install gevent pbr pulp networkx fnss
-    sudo pip install -I six==1.9.0
+    # install libraries for SPIDER
+    sudo apt-get -y install python-matplotlib
+    sudo pip install pbr pulp networkx fnss
 
     # fetch RYU
     cd ~/
@@ -90,10 +92,13 @@ deleted. Are you sure? (y/n) " -n 1 -r
     cd ryu
     
     # install ryu
+    sudo pip install -r tools/pip-requires
+    sudo pip install -I six==1.9.0
     sudo python ./setup.py install
 
     # Add symbolic link to /usr/bin
     # sudo ln -fs ./bin/ryu-manager /usr/local/bin/ryu-manager
+    
     sudo chown -R mininet:mininet ~/ryu
 }
 
