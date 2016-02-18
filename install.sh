@@ -17,26 +17,6 @@ function of13 {
     echo "Installing OpenState switch implementation based on ofsoftswitch13..."
     
     cd ~/
-    sudo apt-get -y install git-core autoconf automake autotools-dev pkg-config \
-        make gcc g++ libtool libc6-dev cmake libpcap-dev libxerces-c2-dev  \
-        unzip libpcre3-dev flex bison libboost-dev
-
-    # Install netbee
-    NBEEURL="http://www.nbee.org/download/"
-    NBEESRC="nbeesrc-feb-24-2015"
-    NBEEDIR="netbee"
-
-    if [ ! -d ${NBEEDIR} ]; then
-        wget -nc ${NBEEURL}${NBEESRC}.zip
-        unzip ${NBEESRC}.zip
-    fi
-    cd ${NBEEDIR}/src
-    cmake .
-    make
-    cd ~/
-    sudo cp ${NBEEDIR}/bin/libn*.so /usr/local/lib
-    sudo ldconfig
-    sudo cp -R ${NBEEDIR}/include/ /usr/
 
     if [ -d "ofsoftswitch13" ]; then
         read -p "A directory named ofsoftswitch13 already exists, by proceeding \
@@ -65,7 +45,7 @@ it will be deleted. Are you sure? (y/n) " -n 1 -r
 # Install RYU
 function ryu {
     echo "Installing RYU controller with OpenState support..."
-
+    
     # install Ryu dependencies"
     sudo apt-get -y install autoconf automake g++ libtool python make libxml2 \
         libxslt-dev python-pip python-dev
@@ -96,9 +76,6 @@ deleted. Are you sure? (y/n) " -n 1 -r
     sudo pip install -I six==1.9.0
     sudo python ./setup.py install
 
-    # Add symbolic link to /usr/bin
-    # sudo ln -fs ./bin/ryu-manager /usr/local/bin/ryu-manager
-    
     sudo chown -R mininet:mininet ~/ryu
 }
 
